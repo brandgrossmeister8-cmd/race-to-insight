@@ -333,7 +333,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       createRoom, joinRoom, joinAsSpectator, startGame, submitAnswer,
       adjustSpeed, broadcastComment, nextStage, finishGame,
       timerControl, setSpectatorMode: setSpectatorModeCtx, expertContinue,
-      setRole, restartGame,
+      setRole, restartGame, addDemoPlayers,
     }}>
       {children}
     </GameContext.Provider>
