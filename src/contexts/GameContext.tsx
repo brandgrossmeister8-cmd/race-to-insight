@@ -25,6 +25,7 @@ interface GameContextType {
   expertContinue: () => void;
   setRole: (role: Role | null) => void;
   restartGame: () => void;
+  addDemoPlayers: () => void;
 }
 
 const GameContext = createContext<GameContextType | null>(null);
