@@ -112,6 +112,12 @@ const LobbyPage = () => {
               ))}
             </div>
 
+            {game.isDemo && game.roomState.players.length < 6 && (
+              <Button variant="outline" size="sm" className="w-full" onClick={game.addDemoPlayers}>
+                🤖 Добавить тестовых игроков
+              </Button>
+            )}
+
             <Button
               variant="hero"
               size="lg"
