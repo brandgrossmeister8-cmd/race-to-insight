@@ -401,7 +401,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     <GameContext.Provider value={{
       role, roomState, myPlayerId, error, connected, isDemo,
       createRoom, joinRoom, joinAsSpectator, startGame, submitAnswer,
-      adjustSpeed, broadcastComment, nextStage, finishGame,
+      adjustSpeed, broadcastComment, setPlayerComment, nextStage, finishGame,
       timerControl, setSpectatorMode: setSpectatorModeCtx, expertContinue,
       setRole, restartGame, addDemoPlayers,
     }}>
