@@ -83,6 +83,54 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
   }, []);
 
+  const generateDemoAnswers = useCallback((stageIndex: number) => {
+    const stage = STAGES[stageIndex];
+    if (!stage) return;
+    
+    const demoAnswers: Record<string, unknown> = {};
+    
+    setRoomState(prev => {
+      if (!prev) return prev;
+      return {
+        ...prev,
+        players: prev.players.map(p => {
+          let answer: unknown;
+          switch (stage.answerType) {
+            case 'single-choice':
+              if (stage.options) {
+                const opt = stage.options[Math.floor(Math.random() * stage.options.length)];
+                answer = opt.id;
+              }
+              break;
+            case 'slider':
+              answer = Math.floor(Math.random() * 100);
+              break;
+            case 'textarea':
+              const textAnswers = [
+                'Клиенты ценят качество и надёжность нашего продукта',
+                'Основная мотивация — экономия времени и удобство',
+                'Покупают из-за уникального сервиса и поддержки',
+                'Привлекает соотношение цены и качества',
+                'Нужен для решения конкретной бизнес-задачи',
+                'Рекомендации от коллег и партнёров',
+              ];
+              answer = textAnswers[Math.floor(Math.random() * textAnswers.length)];
+              break;
+            case 'choice-then-cards':
+              const type = Math.random() > 0.5 ? 'B2B' : 'B2C';
+              answer = { type, fields: { sphere: 'IT', size: '50-200', decision: 'CEO' } };
+              break;
+          }
+          return {
+            ...p,
+            status: 'submitted' as PlayerStatus,
+            answers: { ...p.answers, [stageIndex]: answer },
+          };
+        }),
+      };
+    });
+  }, []);
+
   const startLocalTimer = useCallback(() => {
     clearTimer();
     timerRef.current = setInterval(() => {
