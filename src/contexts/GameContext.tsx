@@ -174,7 +174,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     const adminId = generateId();
     setMyPlayerId(adminId);
     setRole('admin');
-    setRoomState({
+    const room: RoomState = {
       id: generateId(),
       code,
       adminId,
@@ -184,7 +184,9 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       timer: { running: false, remaining: 0, total: 0 },
       spectatorMode: 'track',
       adminComment: '',
-    });
+    };
+    setRoomState(room);
+    saveDemoRoom(room);
   }, [isDemo]);
 
   const joinRoom = useCallback((code: string, name: string) => {
