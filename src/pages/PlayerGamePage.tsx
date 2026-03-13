@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useGame } from '@/contexts/GameContext';
 import { BrandHeader } from '@/components/game/BrandHeader';
+import { racingSounds } from '@/hooks/useRacingSounds';
 import { SpeedBadge } from '@/components/game/SpeedBadge';
 import { TimerDisplay } from '@/components/game/TimerDisplay';
 import { MiniTrack } from '@/components/game/MiniTrack';
