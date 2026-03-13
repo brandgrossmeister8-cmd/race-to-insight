@@ -166,7 +166,7 @@ const LobbyPage = () => {
 
         {mode === 'player' && (
           <div className="bg-card rounded-2xl border p-6 space-y-4 shadow-brand">
-            <h2 className="text-lg font-bold text-center">Вход в гонку</h2>
+            <h2 className="text-lg font-bold text-center">Регистрация</h2>
             {code && (
               <div className="text-center p-3 rounded-lg bg-gradient-brand">
                 <p className="text-primary-foreground text-xs mb-1">Код комнаты</p>
@@ -223,12 +223,6 @@ const LobbyPage = () => {
               ← Назад
             </Button>
           </div>
-        )}
-
-        {game.isDemo && (
-          <p className="text-xs text-center text-muted-foreground">
-            Демо-режим: сервер не подключен. Для полной работы запустите backend.
-          </p>
         )}
       </motion.div>
     </div>
