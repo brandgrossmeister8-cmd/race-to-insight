@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">0@:5B8=3>2K9 70574</title>
+  <desc id="desc">=B5@0:B82=0O 187=5A-83@0 >B <H8=5F:>9</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="180" cy="315" r="110" fill="#ffffff" fill-opacity="0.15"/>
+  <text x="300" y="270" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700" fill="#ffffff">
+    0@:5B8=3>2K9 70574
+  </text>
+  <text x="300" y="340" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#f3f4f6">
+    =B5@0:B82=0O 187=5A-83@0
+  </text>
+  <text x="300" y="395" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#f3f4f6">
+    6 MB0?>2. 6 @5H5=89. 1 ?>1548B5;L.
+  </text>
+  <text x="300" y="470" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#e5e7eb">
+    (&/   " +
+  </text>
+  <text x="110" y="338" font-family="Arial, Helvetica, sans-serif" font-size="90" fill="#ffffff">=•</text>
+</svg>
