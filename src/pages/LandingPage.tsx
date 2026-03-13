@@ -30,7 +30,7 @@ const LandingPage = () => {
   ];
 
   const stages = STAGES.map((s, i) => ({
-    city: s.cityName,
+    city: s.cityName.toUpperCase(),
     time: `${Math.floor(s.timerSeconds / 60)}:${String(s.timerSeconds % 60).padStart(2, '0')}`,
     type: s.answerType === 'single-choice' ? 'Выбор' :
           s.answerType === 'slider' ? 'Слайдер' :
@@ -41,6 +41,13 @@ const LandingPage = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-dark">
+        <motion.p
+          className="absolute top-6 left-0 right-0 z-20 text-3xl md:text-4xl text-primary-foreground font-black tracking-wide text-center px-4"
+          initial="hidden" animate="visible" variants={fadeUp} custom={0}
+        >
+          <span>{BRAND_NAME.toUpperCase()}</span>
+        </motion.p>
+
         {/* Track lines */}
         <div className="absolute inset-0 pointer-events-none">
           {[20, 35, 50, 65, 80].map((top, i) => (
@@ -51,9 +58,9 @@ const LandingPage = () => {
           ))}
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-16">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-secondary/30 bg-secondary/10 text-secondary text-sm mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#2A168F] bg-[#2A168F] text-white text-sm mb-8">
               <Gauge className="w-4 h-4" />
               Интерактивная бизнес-игра
             </div>
@@ -63,32 +70,30 @@ const LandingPage = () => {
             className="text-5xl md:text-7xl font-bold text-primary-foreground mb-4 tracking-tight"
             initial="hidden" animate="visible" variants={fadeUp} custom={1}
           >
-            <span className="text-gradient-brand">{GAME_TITLE}</span>
+            <span className="text-white">{GAME_TITLE}</span>
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4"
+            className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-4"
             initial="hidden" animate="visible" variants={fadeUp} custom={2}
           >
             Тренинг по маркетинговой стратегии в метафоре гоночной трассы.
-            <br />6 городов. 6 решений. 1 победитель.
-          </motion.p>
-
-          <motion.p
-            className="text-sm text-muted-foreground mb-10"
-            initial="hidden" animate="visible" variants={fadeUp} custom={2.5}
-          >
-            от <span className="text-secondary font-semibold">{BRAND_NAME}</span>
+            <br />6 городов - 6 решений.
           </motion.p>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
             initial="hidden" animate="visible" variants={fadeUp} custom={3}
           >
-            <Button variant="hero" size="xl" onClick={() => navigate('/game')}>
-              🏎️ Начать игру <ArrowRight className="w-5 h-5 ml-1" />
+            <Button
+              variant="hero"
+              size="xl"
+              className="w-[260px] justify-center bg-[#2A168F] hover:bg-[#6838CE] text-white"
+              onClick={() => navigate('/game')}
+            >
+              🚕 Начать игру <ArrowRight className="w-5 h-5 ml-1" />
             </Button>
-            <Button variant="outline" size="xl" className="border-secondary/40 text-secondary hover:bg-secondary/10" onClick={() => {
+            <Button variant="outline" size="xl" className="w-[260px] justify-center border-[#A977FA]/50 text-[#A977FA] hover:bg-[#A977FA]/10" onClick={() => {
               document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
             }}>
               Как это работает?
@@ -168,7 +173,7 @@ const LandingPage = () => {
                       <div className="flex items-center gap-3 flex-1">
                         <MapPin className="w-5 h-5 text-secondary shrink-0" />
                         <div>
-                          <h3 className="font-bold text-primary-foreground">{s.city}</h3>
+                          <h3 className="font-bold text-[#2A168F]">{s.city}</h3>
                           <p className="text-xs text-muted-foreground">Этап {i + 1}</p>
                         </div>
                       </div>
@@ -277,8 +282,8 @@ const LandingPage = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Готовы к заезду?</h2>
           <p className="text-muted-foreground mb-8">Запустите игру прямо сейчас — нужен только браузер</p>
-          <Button variant="hero" size="xl" onClick={() => navigate('/game')}>
-            🏁 Начать игру <ChevronRight className="w-5 h-5 ml-1" />
+          <Button variant="hero" size="xl" className="w-[260px] justify-center" onClick={() => navigate('/game')}>
+            🚕 Начать игру <ChevronRight className="w-5 h-5 ml-1" />
           </Button>
         </motion.div>
       </section>

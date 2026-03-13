@@ -28,7 +28,7 @@ const SpectatorViewPage = () => {
       <BrandHeader compact />
       {stage && (
         <div className="text-right">
-          <p className="text-primary-foreground font-bold">{stage.cityName}</p>
+          <p className="text-[#2A168F] font-bold">{stage.cityName.toUpperCase()}</p>
           <p className="text-xs text-muted-foreground">{stage.title}</p>
         </div>
       )}
@@ -110,7 +110,7 @@ const SpectatorViewPage = () => {
             <div className="text-center">
               <span className="text-5xl">🔧</span>
               <h2 className="text-2xl font-bold mt-3">Pit-stop: Экспертный разбор</h2>
-              {stage && <p className="text-muted-foreground">{stage.cityName}</p>}
+              {stage && <p className="text-[#2A168F] font-bold">{stage.cityName.toUpperCase()}</p>}
             </div>
             {roomState.adminComment && (
               <div className="p-6 rounded-xl bg-spectator/10 border border-spectator/30 text-lg leading-relaxed">

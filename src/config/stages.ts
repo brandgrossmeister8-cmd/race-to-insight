@@ -123,5 +123,5 @@ export function getInterpretation(speed: number): string {
 export const INITIAL_SPEED = 60;
 export const SPEED_DELTA = 10;
 export const MAX_PLAYERS = 6;
-export const BRAND_NAME = 'Имшинецкая и партнеры';
+export const BRAND_NAME = 'ИМШИНЕЦКАЯ И ПАРТНЕРЫ';
 export const GAME_TITLE = 'Маркетинговый заезд';
