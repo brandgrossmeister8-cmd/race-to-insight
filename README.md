@@ -1,73 +1,105 @@
-# Welcome to your Lovable project
+# 🏎️ Race to Insight - Интерактивная бизнес-игра
 
-## Project info
+**Маркетинговый заезд** - тренинг на основе технологии системного продвижения Ии Имшинецкой
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🌐 Играть онлайн
 
-## How can I edit this code?
+**Ссылка на игру:** https://brandgrossmeister8-cmd.github.io/race-to-insight/
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🎮 Как играть
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+### Для администратора (ведущего):
+1. Откройте игру по ссылке
+2. Нажмите "Начать игру" → "Создать комнату"
+3. Передайте **код комнаты** участникам
+4. Дождитесь подключения всех игроков
+5. Нажмите "Начать игру"
+6. Управляйте игрой через панель администратора
 
-Changes made via Lovable will be committed automatically to this repo.
+### Для игроков:
+1. Откройте игру по ссылке
+2. Нажмите "Начать игру"
+3. Введите **код комнаты** от ведущего
+4. Введите своё имя и бизнес
+5. Нажмите "Присоединиться"
+6. Отвечайте на вопросы каждого этапа
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Локальная разработка
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Установка зависимостей
+```bash
+npm install
+```
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Запуск локального сервера
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Откройте http://127.0.0.1:8091/ в браузере
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 📦 Публикация обновлений
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Способ 1: Автоматический скрипт (рекомендуется)
 
-## What technologies are used for this project?
+```bash
+./deploy.sh "Описание изменений"
+```
 
-This project is built with:
+Скрипт автоматически:
+- Создаст коммит с вашими изменениями
+- Отправит на GitHub
+- Соберёт проект
+- Опубликует на GitHub Pages
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Способ 2: Вручную
 
-## How can I deploy this project?
+```bash
+# Коммит изменений
+git add .
+git commit -m "Описание изменений"
+git push origin main
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+# Публикация на GitHub Pages
+npm run deploy
+```
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🎯 Структура этапов игры
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. **Ассортиминск** - Выбор: товар или услуга
+2. **Брендск** - Баланс между брендом и ассортиментом
+3. **Зачемск** - Зачем клиенты покупают?
+4. **Траффик-Сити** - Выбор канала продвижения
+5. **Цалово** - Целевая аудитория (B2B/B2C параметры)
+6. **Конкурентов** - Конкурентное преимущество
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## 🛠️ Технологии
+
+- **React** + **TypeScript**
+- **Vite** - сборщик
+- **Tailwind CSS** - стилизация
+- **Framer Motion** - анимации
+- **React Router** - навигация
+- **GitHub Pages** - хостинг
+
+---
+
+## 📝 Автор
+
+**ИМШИНЕЦКАЯ И ПАРТНЕРЫ**
+
+---
+
+## 📄 Лицензия
+
+Все права защищены © 2026
